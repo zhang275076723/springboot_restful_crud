@@ -1,0 +1,24 @@
+server:
+  port: 8081
+  servlet:
+    context-path: /demo2
+
+spring:
+  datasource:
+    druid:
+      # mysql8.0之后的driver-class-name需要添加cj，url需要添加时区serverTimezone
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      url: jdbc:mysql://localhost:3306/springboot_crud?serverTimezone=Hongkong
+      username: root
+      password: 123456
+
+mybatis-plus:
+  global-config:
+    db-config:
+      # 设置表名通用前缀
+      table-prefix: tbl_
+      # 设置主键id字段的生成策略为参照数据库设定的策略，当前数据库设置id生成策略为自增
+      id-type: auto
+  configuration:
+    # mp日志
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl

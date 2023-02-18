@@ -1,0 +1,27 @@
+server:
+  port: 8080
+
+person:
+  age: 180
+  name: jack
+  email: 2564@qq.com
+  lessons:
+    - 语文
+    - 数学
+    - "java\tC" #字符串如果需要使用转义字符，需要将数据字符串使用双引号包裹起来
+
+datasource:
+  driver-class-name: com.mysql.cj.jdbc.Driver
+  url: jdbc:mysql://localhost:3306/xxx?serverTimezone=UTC
+  username: root
+  password: 123456
+
+#被引用的基准地址
+baseDir: /usr/local/fire
+
+center:
+  #引用数据
+  dataDir: ${baseDir}/data
+  tmpDir: ${baseDir}/tmp
+  logDir: ${baseDir}/log
+  msgDir: ${baseDir}/msgDir
